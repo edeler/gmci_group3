@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        h1 { font-size:300%; }
+        div { text-align:center; }
+        textarea { resize: none; }
+        label { display: block; padding-bottom: 10px;}
+    </style>
+    <title>Extras</title>
+</head>
+<body>
+    <div>
+        <h1>Sausage Party</h1>
+        <label for="input_extras">Please inform the staff about any extras you would like to order:</label>
+        <form action="/backend-extras">
+            <textarea id="input_extras" name="input_extras" rows="5" cols="50" placeholder="I don't want my currywurst to be spicy"></textarea>
+            <input type="submit" name="Submit">
+        </form>
+    </div>
+</body>
+</html>
