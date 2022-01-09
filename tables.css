@@ -9,6 +9,8 @@
     --table-color-hover: rgb(184, 250, 31);
     --chair-color-hover: rgb(132, 179, 22);
     --wall-color: black;
+    --chair-color-selected: rgb(61, 168, 168);
+    --table-color-selected: rgb(83, 204, 204);
 }
 
 * {
@@ -66,6 +68,14 @@
 }
 
 .table-container:hover .chair {
+    background-color: var(--chair-color-hover);
+}
+
+.table-container:hover .table .table-selected {
+    background-color: var(--table-color-hover);
+}
+
+.table-container:hover .chair .chair-selected {
     background-color: var(--chair-color-hover);
 }
 
@@ -131,6 +141,14 @@
 
 .bar-chair:hover {
     background-color: var(--chair-color-hover);
+}
+
+.table-selected {
+    background-color: var(--table-color-selected);
+}
+
+.chair-selected {
+    background-color: var(--chair-color-selected);
 }
 
 footer {

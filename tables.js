@@ -16,11 +16,6 @@ function setTable (t) {
     switch (t.orientation) {
         case "east-west":
             table.classList.add('table-container-east-west');
-            table.addEventListener('contextmenu', function(ev) {
-                ev.preventDefault();
-                rotateTable(this);
-                return false;
-            }, false);
 
             var chair_1 = document.createElement("div");
             chair_1.classList.add("chair", "chair-east-west");
@@ -40,15 +35,21 @@ function setTable (t) {
                 var orientation = ev.target.classList[1].replace("table-container-", "");
                 ev.dataTransfer.setData("text/plain", src + "_" + orientation);
             });
-            break;
 
-        case "north-south":
-            table.classList.add('table-container-north-south');
             table.addEventListener('contextmenu', function(ev) {
                 ev.preventDefault();
                 rotateTable(this);
                 return false;
             }, false);
+
+            table.addEventListener('click', function(ev) {
+                toggleTableSelection(this);
+            });
+
+            break;
+
+        case "north-south":
+            table.classList.add('table-container-north-south');
 
             var chair_1 = document.createElement("div");
             chair_1.classList.add("chair", "chair-north-south");
@@ -68,6 +69,17 @@ function setTable (t) {
                 var orientation = ev.target.classList[1].replace("table-container-", "");
                 ev.dataTransfer.setData("text/plain", src + "_" + orientation);
             });
+
+            table.addEventListener('contextmenu', function(ev) {
+                ev.preventDefault();
+                rotateTable(this);
+                return false;
+            }, false);
+
+            table.addEventListener('click', function(ev) {
+                toggleTableSelection(this);
+            });
+
             break;
 
         case "empty":
@@ -130,6 +142,28 @@ function printTableListToConsole(){
     }
 
     console.log(output);
+}
+
+// Mark tables that were selected by the user
+function toggleTableSelection(element) {
+    if (element.childNodes[0].classList.contains("chair-selected")) {
+        element.childNodes[0].classList.remove("chair-selected");
+        element.childNodes[1].classList.remove("table-selected");
+        element.childNodes[2].classList.remove("chair-selected");
+    } else {
+        element.childNodes[0].classList.add("chair-selected");
+        element.childNodes[1].classList.add("table-selected");
+        element.childNodes[2].classList.add("chair-selected");
+    }
+}
+
+// Mark bar chairs that were selected by the user
+function toggleBarChairSelection(element) {
+    if (element.classList.contains("chair-selected")) {
+        element.classList.remove("chair-selected");
+    } else {
+        element.classList.add("chair-selected");
+    }
 }
 
 // Rotate a table 90°
