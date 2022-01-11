@@ -1,0 +1,40 @@
+head{
+    background-color: blanchedalmond;
+}
+
+.title_Sausage_Party_Menu{
+    background-color: blanchedalmond;
+}
+
+body{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    width: 30%;
+    font-size: medium;
+    font-family: 'Courier New', monospace;
+    font-size: large;
+}
+
+footer{
+    background-color: rgb(162, 152, 140);
+}
+
+div > .meal_list{
+    background-color: bisque;
+}
+
+.Food{
+    font-weight: bolder;
+}
+dd > .Food{
+    font-weight: normal;
+}
+.Drinks{
+    font-weight: bolder;
+}
+.Exclusives{
+    font-weight: bolder;
+}

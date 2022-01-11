@@ -1,15 +1,16 @@
 <!--menu (Speisekarte), that shows all meals (and offers) of the restaurant-->
 <!DOCTYPE html>
-<!--head with titles names etc.-->
+<!--head with initials etc.-->
 <head>
     <meta charset="utf-8">
-    <div title="title_Sausage_Party_Menu">Sausage Party Menu</div>
+    <link rel="stylesheet" type="text/css" href="food_menu.css">
 </head>
 <!--body with all meals-->
 <body>
     <!--meal_list with all avaible meals. Every meal has a name, description, price and section id-->
+    <div class="title_Sausage_Party_Menu">Sausage Party Menu</div>
     <div class="meal_list">
-        <ul title="Food">
+        <ul class="Food">Food
             <li id="Pizza">Pizza Magherita</li>
                 <dd>Spelt flour, cheese^1), tomatoes, salat, olive oil</dd>
             <li id="Pasta">Pasta</li>
@@ -17,13 +18,14 @@
             <li id="Sausage">Sausage Party</li>
                 <dd>German Sausage (pork), bread and hasta-lavista-sauce</dd>
           </ul>
-        <ul title="Drinks">
+        <ul class="Drinks">Drinks
             <li id="Tea">Black Tea</li>
                 <dd>British black tea</dd>
             <li id="Coffee">coffee</li>
                 <dd>100% black coffee Arabica</dd>
         </ul>
-        <ul title="Exclusives">
+        <!--exclusives need an Mariachi imige as background in color(bisque)-->
+        <ul class="Exclusives">Exclusives
         <li>Mariachi</li>
             <dd>Did you hear that? Someone is calling "Aaaajjjjjjjjjajajaj!". Meet your personal Mariachi even the same day and feel the spirit of a truly Mexican culture!</dd>
         </ul>  
@@ -33,7 +35,7 @@
 <footer>
     <div class="ingediences">
         <ul>
-            <li>1) milk</li>
+            <dl>1) milk</dl>
         </ul>
     </div>
     <div title="page_number">1</div>
