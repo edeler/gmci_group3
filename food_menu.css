@@ -2,39 +2,91 @@ head{
     background-color: blanchedalmond;
 }
 
-.title_Sausage_Party_Menu{
-    background-color: blanchedalmond;
-}
-
 body{
     margin: auto;
     display: flex;
-    justify-content: center;
-
     flex-direction: column;
-    width: 30%;
+
+    width: 35%;
     font-size: medium;
     font-family: 'Courier New', monospace;
-    font-size: large;
+    border-radius: 7px;
+    border-bottom: 5px;
+    border-top: 5px;
+    border-left: 5px;
+    border-right: 5px;
+    border-color: black;
+    border-style: double;
+    box-shadow: 0 0 15px rgba(34, 34, 34, 0.795);
 }
 
 footer{
     background-color: rgb(162, 152, 140);
+    box-shadow: 0 0 15px rgb(178, 161, 140) inset;
+    font-size: small;
 }
 
-div > .meal_list{
+.title_Sausage_Party_Menu{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+
+    background-color: blanchedalmond;
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    height: 35px;
+    box-shadow: 0 0 5px rgb(196, 176, 152) inset;
+}
+
+.meal_list{
     background-color: bisque;
+    box-shadow: 0 0 15px rgb(196, 176, 152) inset;
+    height: 700px;
+}
+.ingredients{
+    font-size: medium;
+    font-style: italic;
+}
+
+#mariachi{
+    font-size: small;
+    font-style: italic;
 }
 
 .Food{
-    font-weight: bolder;
+    font-size: large;
 }
-dd > .Food{
-    font-weight: normal;
+
+#food{
+    width: 91%;
+    background-color: rgb(255, 226, 191);
 }
+
 .Drinks{
-    font-weight: bolder;
+    font-size: large;   
 }
-.Exclusives{
+#drinks{
+    width: 91%;
     font-weight: bolder;
+    background-color: rgb(255, 226, 191);
+}
+
+.Exclusives{
+    font-size: large;
+    object-fit: scale-down;
+}
+
+#mariachi_background{
+    height: 250px;
+    background-image: url(mariachi.png);
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-size: 100% 100%;
+    box-shadow: 100px 0px 200px 10px rgb(178, 161, 140) inset;
+}
+
+#exclusives{
+    width: 91%;
+    background-color: transparent;
 }

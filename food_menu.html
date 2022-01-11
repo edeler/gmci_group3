@@ -5,38 +5,45 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="food_menu.css">
 </head>
+
 <!--body with all meals-->
-<body>
+<body class="menu">
     <!--meal_list with all avaible meals. Every meal has a name, description, price and section id-->
-    <div class="title_Sausage_Party_Menu">Sausage Party Menu</div>
+    <div class="title_Sausage_Party_Menu">Sausage Party Menu©</div>
     <div class="meal_list">
-        <ul class="Food">Food
-            <li id="Pizza">Pizza Magherita</li>
-                <dd>Spelt flour, cheese^1), tomatoes, salat, olive oil</dd>
-            <li id="Pasta">Pasta</li>
-                <dd>Spelt flour noodles, cheese, tomatoes, salat, olive oil</dd>
-            <li id="Sausage">Sausage Party</li>
-                <dd>German Sausage (pork), bread and hasta-lavista-sauce</dd>
+        <ul class="Food">
+            <h1 id="food">Food</h1>
+            <li id="Pizza">pizza magherita</li>
+                <dd class="ingredients">Spelt flour, cheese<sup>1)</sup>, tomatoes, salat, olive oil</dd>
+            <li id="Pasta">pasta</li>
+                <dd class="ingredients">Spelt flour noodles, cheese<sup>1)</sup>, tomatoes, salat, olive oil</dd>
+            <li id="Sausage">sausage party</li>
+                <dd class="ingredients">German sausage, bread and hasta-lavista-sauce</dd>
           </ul>
-        <ul class="Drinks">Drinks
-            <li id="Tea">Black Tea</li>
-                <dd>British black tea</dd>
+        <ul class="Drinks">
+            <h2 id="drinks">Drinks</h2>
+            <li id="Tea">black tea</li>
+                <dd class="ingredients">British black tea</dd>
             <li id="Coffee">coffee</li>
-                <dd>100% black coffee Arabica</dd>
+                <dd class="ingredients">100% black coffee Arabica</dd>
         </ul>
         <!--exclusives need an Mariachi imige as background in color(bisque)-->
-        <ul class="Exclusives">Exclusives
-        <li>Mariachi</li>
-            <dd>Did you hear that? Someone is calling "Aaaajjjjjjjjjajajaj!". Meet your personal Mariachi even the same day and feel the spirit of a truly Mexican culture!</dd>
+        <ul class="Exclusives">
+            <h3 id="exclusives">Exclusives</h3>
+        <li>mariachi</li>
+            <dd id="mariachi">Did you hear that? Someone is calling "Aaaajjjjjjjjjajajaj!". <br \> Meet your personal Mariachi even the same day and <br \> feel the spirit of a truly Mexican culture!</dd>
         </ul>  
+        <div id="mariachi_background"></div>
     </div>
 </body>
 <!--footer for ingrediences and page numbers-->
-<footer>
+<footer class="menu">
     <div class="ingediences">
         <ul>
             <dl>1) milk</dl>
+            <dl>2) pork</dl>
         </ul>
+        ©All rights reserved to gmci_group3 from LUH hci project.
     </div>
-    <div title="page_number">1</div>
+    <div title="page_number"></div>
 </footer>
