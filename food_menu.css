@@ -1,3 +1,9 @@
+@media screen and (max-width: 700px) {
+    .row, .navbar {   
+      flex-direction: column;
+    }
+  }
+
 head{
     background-color: blanchedalmond;
 }
@@ -7,7 +13,7 @@ body{
     display: flex;
     flex-direction: column;
 
-    width: 35%;
+    width: 720px;
     font-size: medium;
     font-family: 'Courier New', monospace;
     border-radius: 7px;
@@ -23,6 +29,7 @@ body{
 footer{
     background-color: rgb(162, 152, 140);
     box-shadow: 0 0 15px rgb(178, 161, 140) inset;
+    font-style: italic;
     font-size: small;
 }
 
@@ -35,15 +42,28 @@ footer{
     font-size: x-large;
     font-weight: bold;
     text-align: center;
-    height: 35px;
+    height: 40px;
     box-shadow: 0 0 5px rgb(196, 176, 152) inset;
 }
 
+div > .meals{
+    display: flex;
+    flex-direction: row;
+}
+
 .meal_list{
+    display: flex;
+    flex-direction: column;
     background-color: bisque;
     box-shadow: 0 0 15px rgb(196, 176, 152) inset;
-    height: 700px;
 }
+
+.meal_list_price{
+    display: flex;
+    background-color: brown;
+    height: auto;
+}
+
 .ingredients{
     font-size: medium;
     font-style: italic;
@@ -89,4 +109,16 @@ footer{
 #exclusives{
     width: 91%;
     background-color: transparent;
+}
+
+#price{
+    font-weight: bold;
+    width: 40%;
+    text-align: right;
+    padding-right: 5%;
+}
+
+#design{
+    height: 20px;
+    background-color: rgb(138, 26, 26);
 }
