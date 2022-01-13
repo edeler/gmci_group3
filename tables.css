@@ -81,6 +81,11 @@ button {
     background-color: none;
 }
 
+.table-container-pool {
+    width: var(--grid-size);
+    height: var(--grid-size);
+}
+
 .table-container:hover .table {
     background-color: var(--table-color-hover);
 }
@@ -134,7 +139,7 @@ button {
 }
 
 .chair-selected {
-    background-color: var(--chair-color-selected);
+    background-color: var(--chair-color-selected) !important;
 }
 
 .chair-east-west {
@@ -171,4 +176,17 @@ button {
 
 .bar-chair:hover {
     background-color: var(--chair-color-hover);
+}
+
+/************** table pool **************/
+
+.table-pool {
+    background-color: var(--floor-color);
+    height: var(--grid-size);
+    margin: 1em 10%;
+    display: flex;
+    grid-template-rows: var(--grid-size);
+    grid-template-columns: repeat(19, var(--grid-size));
+    column-gap: 0.7em;
+    padding: 0.6em;
 }

@@ -16,6 +16,7 @@ function setTable (t) {
     switch (t.orientation) {
         case "east-west":
             table.classList.add('table-container-east-west');
+            if (t.roomID == 'table-pool') table.classList.add('table-container-pool');
 
             var chair_1 = document.createElement("div");
             chair_1.classList.add("chair", "chair-east-west");
@@ -50,6 +51,7 @@ function setTable (t) {
 
         case "north-south":
             table.classList.add('table-container-north-south');
+            if (t.roomID == 'table-pool') table.classList.add('table-container-pool');
 
             var chair_1 = document.createElement("div");
             chair_1.classList.add("chair", "chair-north-south");
@@ -97,12 +99,20 @@ function setTable (t) {
             
             table.addEventListener('drop', function(ev) {
                 ev.preventDefault();
-
                 var data = ev.dataTransfer.getData("text/plain").split("_");
-                var src  = document.getElementById(ev.dataTransfer.getData("text/plain").replace("_" + data[3], ""));
 
+                // Drop a new table
                 setTable(new Table(t.roomID, data[3], t.row, t.column));
-                setTable(new Table(data[0], 'empty', data[2], data[1]));
+
+                // Remove the old table
+                if (data[0] == 'table-pool') {
+                    var src  = document.getElementById(ev.dataTransfer.getData("text/plain").replace("_" + data[3], ""));
+                    var tablePool = document.getElementById('table-pool');
+                    tablePool.removeChild(src);
+                } else {
+                    setTable(new Table(data[0], 'empty', data[2], data[1]));
+                }
+                ev.target.style.background = "var(--floor-color)";
             });
             
             table.addEventListener('dragover', function(ev) {
@@ -114,13 +124,26 @@ function setTable (t) {
             break;
     }
 
-    table.style = "grid-column: " + t.column + "; grid-row: " + t.row + ";";
+    if (t.roomID != 'table-pool') table.style = "grid-column: " + t.column + "; grid-row: " + t.row + ";";
     table.id = t.roomID + "_" + t.column + "_" + t.row;
 
     var element = document.getElementById(table.id);
     if (element != null) element.parentNode.removeChild(element);
 
     document.getElementById(t.roomID).appendChild(table);
+}
+
+// Find the next highest index in the table pool
+function getNewMaxTableIndex() {
+    var max = -1;
+
+    var tables = document.getElementsByClassName("table-container-pool");
+    for (const element of tables) {
+        var index =  parseInt(element.id.split("_")[1]);
+        if (index > max) max = index;
+    }
+
+    return max + 1;
 }
 
 function printTableListToConsole(){
@@ -134,14 +157,48 @@ function printTableListToConsole(){
             var tableString = "('";
             tableString += parts[0] + "', '"; // room
             tableString += element.classList[1].replace("table-container-", "") + "', "; // orientation
-            tableString += parts[1] + ", "; // row
-            tableString += parts[2] + "),\n"; // column
+            tableString += parts[2] + ", "; // row
+            tableString += parts[1] + "),\n"; // column
             
             output += tableString;
         }
     }
 
     console.log(output);
+}
+
+function setupTablePool() {
+    var tablePool = document.getElementById('table-pool');
+            
+    tablePool.addEventListener('dragleave', function(ev) {
+        ev.preventDefault();
+    });
+    
+    tablePool.addEventListener('dragenter', function(ev) {
+        ev.preventDefault();
+    });
+    
+    tablePool.addEventListener('drop', function(ev) {
+        ev.preventDefault();
+
+        var data = ev.dataTransfer.getData("text/plain").split("_");
+
+        // Drop a new table
+        setTable(new Table('table-pool', data[3], 1, getNewMaxTableIndex()));
+
+        // Remove the old table
+        if (data[0] == 'table-pool') {
+            var src  = document.getElementById(ev.dataTransfer.getData("text/plain").replace("_" + data[3], ""));
+            tablePool.removeChild(src);
+        } else {
+            setTable(new Table(data[0], 'empty', data[2], data[1]));
+        }
+        ev.target.style.background = "var(--floor-color)";
+    });
+    
+    tablePool.addEventListener('dragover', function(ev) {
+        ev.preventDefault();
+    });
 }
 
 // Setup all bar elements
@@ -225,14 +282,16 @@ function setupBar() {
 
 // Mark tables that were selected by the user
 function toggleTableSelection(element) {
-    if (element.childNodes[0].classList.contains("chair-selected")) {
-        element.childNodes[0].classList.remove("chair-selected");
-        element.childNodes[1].classList.remove("table-selected");
-        element.childNodes[2].classList.remove("chair-selected");
-    } else {
-        element.childNodes[0].classList.add("chair-selected");
-        element.childNodes[1].classList.add("table-selected");
-        element.childNodes[2].classList.add("chair-selected");
+    if (!element.id.startsWith('table-pool')) {
+        if (element.childNodes[0].classList.contains("chair-selected")) {
+            element.childNodes[0].classList.remove("chair-selected");
+            element.childNodes[1].classList.remove("table-selected");
+            element.childNodes[2].classList.remove("chair-selected");
+        } else {
+            element.childNodes[0].classList.add("chair-selected");
+            element.childNodes[1].classList.add("table-selected");
+            element.childNodes[2].classList.add("chair-selected");
+        }
     }
 }
 
@@ -322,20 +381,59 @@ var presetTables =
     new Table('dining-room', 'north-south', 1, 6),
     new Table('dining-room', 'north-south', 1, 7),
     new Table('dining-room', 'north-south', 5, 8),
-    new Table('dining-room', 'east-west', 1, 1),
-    new Table('dining-room', 'east-west', 4, 6),
     new Table('dining-room', 'east-west', 2, 10),
     new Table('dining-room', 'east-west', 3, 10),
     new Table('dining-room', 'east-west', 4, 10),
     new Table('dining-room', 'east-west', 5, 10),
+    new Table('dining-room', 'east-west', 1, 1),
+    new Table('dining-room', 'east-west', 4, 6),
+    new Table('dining-room', 'east-west', 2, 1),
+    new Table('dining-room', 'east-west', 6, 1),
+    new Table('table-pool', 'north-south', 1, 1),
+    new Table('table-pool', 'north-south', 1, 3),
+    new Table('table-pool', 'north-south', 1, 4),
+    new Table('table-pool', 'north-south', 1, 7),
+    new Table('table-pool', 'east-west', 1, 2),
+    new Table('table-pool', 'east-west', 1, 5),
+    new Table('table-pool', 'east-west', 1, 6),
     new Table('outside', 'north-south', 1, 20),
     new Table('outside', 'north-south', 1, 21),
     new Table('outside', 'north-south', 1, 22),
     new Table('outside', 'north-south', 4, 22),
+    new Table('outside', 'north-south', 1, 10),
+    new Table('outside', 'north-south', 4, 11),
+    new Table('outside', 'north-south', 4, 12),
+    new Table('outside', 'north-south', 4, 13),
+    new Table('outside', 'north-south', 1, 17),
+    new Table('outside', 'north-south', 4, 17),
+    new Table('outside', 'north-south', 4, 16),
+    new Table('outside', 'north-south', 4, 2),
+    new Table('outside', 'north-south', 4, 3),
+    new Table('outside', 'north-south', 2, 3),
+    new Table('outside', 'north-south', 1, 6),
+    new Table('outside', 'north-south', 1, 7),
+    new Table('outside', 'north-south', 1, 8),
+    new Table('outside', 'north-south', 1, 9),
+    new Table('outside', 'east-west', 1, 12),
+    new Table('outside', 'east-west', 2, 12),
+    new Table('outside', 'east-west', 1, 15),
+    new Table('outside', 'east-west', 4, 19),
+    new Table('outside', 'east-west', 3, 19),
+    new Table('outside', 'east-west', 1, 1),
+    new Table('outside', 'east-west', 2, 1),
+    new Table('outside', 'east-west', 3, 6),
+    new Table('outside', 'east-west', 4, 8),
+    new Table('bar', 'north-south', 1, 12),
+    new Table('bar', 'north-south', 1, 11),
     new Table('bar', 'north-south', 5, 8),
     new Table('bar', 'north-south', 5, 4),
     new Table('bar', 'east-west', 4, 11),
-    new Table('bar', 'east-west', 5, 11)
+    new Table('bar', 'east-west', 5, 11),
+    new Table('bar', 'east-west', 6, 6),
+    new Table('bar', 'east-west', 5, 6),
+    new Table('bar', 'east-west', 4, 6),
+    new Table('bar', 'east-west', 6, 1),
+    new Table('bar', 'east-west', 5, 1),
 ];
 
 // Sets up all tabels
@@ -346,6 +444,7 @@ function setupTables() {
     presetTables.forEach(element => {
         setTable(element);
     });
+    setupTablePool();
 }
 
 // Run setup on load
