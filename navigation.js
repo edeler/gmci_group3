@@ -180,7 +180,7 @@
         var seats = Array.from({length: 8}, () => Math.floor(Math.random() * 99));
 
         for( var i = 0; i < slots.length; i++){
-            text += "<tr>" + "<td>" + '<button id="button_slots"'  + 'type="button"'  + ' onclick="setBackgroundColorByClick(this)">' + slots[i] + '</button>' + "</td>" + "<td>" + seats[i] + "</td>" + "/<tr>";
+            text += "<tr>" + "<td>" + '<button id="button_slots"'  + 'type="button"'  + ' onclick="setBackgroundColorByClick(this)">' + slots[i] + '</button>' + "</td>" + "<td>" + seats[i] + "</td>" + "</tr>";
         }
 
         text += "</table>";
