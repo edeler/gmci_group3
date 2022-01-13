@@ -1,4 +1,4 @@
-
+// Kalendar stuff
     var Cal = function(divId) {
 
     //Store div id
@@ -100,13 +100,13 @@
     var chk = new Date();
     var chkY = chk.getFullYear();
     var chkM = chk.getMonth();
-    console.log("start_vergleich")
-    console.log(chkY)
-    console.log(this.currYear)
-    console.log(chkM)
-    console.log(this.currMonth)
-    console.log(i)
-    console.log(this.currDay)
+    // console.log("start_vergleich")
+    // console.log(chkY)
+    // console.log(this.currYear)
+    // console.log(chkM)
+    // console.log(this.currMonth)
+    // console.log(i)
+    // console.log(this.currDay)
     if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
         html += '<td class="today">' + i + '</td>';
     }else if((chkY > this.currYear) || (chkY >= this.currYear && chkM >= this.currMonth) && i < this.currDay){
@@ -139,24 +139,50 @@
     // Write HTML to the div
     document.getElementById(this.divId).innerHTML = html;
     };
-
-    // On Load of the window
-    window.onload = function() {
-
+    
     // Start calendar
-    var c = new Cal("divCal");			
-    c.showcurr();
+    function start_calendar(){
+        var c = new Cal("divCal");			
+        c.showcurr();
 
-    // Bind next and previous button clicks
-    getId('btnNext').onclick = function() {
-    c.nextMonth();
-    };
-    getId('btnPrev').onclick = function() {
-    c.previousMonth();
-    };
+        // Bind next and previous button clicks
+        getId('btnNext').onclick = function() {
+        c.nextMonth();
+        };
+        getId('btnPrev').onclick = function() {
+        c.previousMonth();
+        };
     }
 
     // Get element by id
     function getId(id) {
     return document.getElementById(id);
-}
+    }
+
+    // mögliche Uhrzeiten
+    var slots = ["10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "18:00 - 19:00", "19:00 - 20:00"];
+    //zeitslots
+    function zeit_slot(){
+        
+        var text = "<table>";
+        text += '<thead><tr>';
+        text += '<td colspan="2">' + "Zeitslot" + '</td>';
+        text += '</tr></thead>';
+
+        var seats = Array.from({length: 8}, () => Math.floor(Math.random() * 99));
+
+        for( var i = 0; i < slots.length; i++){
+            text += "<tr>" + "<td>" + slots[i] + "</td>" + "<td>" + seats[i] + "</td>" + "/<tr>";
+        }
+
+        text += "</table>";
+        document.getElementById("Zeitslots").innerHTML = text;
+    }
+
+
+
+    // On Load of the window
+    window.onload = function(){
+        this.start_calendar();
+        this.zeit_slot();
+    }
