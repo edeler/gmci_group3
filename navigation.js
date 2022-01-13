@@ -108,13 +108,14 @@
     // console.log(i)
     // console.log(this.currDay)
     if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
-        html += '<td class="today">' + i + '</td>';
+        
+        html += '<td class="today"><button id="button_today" type="button" onclick="setBackgroundColorByClick(this)">' + i + '</button></td>';
     }else if((chkY > this.currYear) || (chkY >= this.currYear && chkM >= this.currMonth) && i < this.currDay){
         html += '<td class="past">' + i + '</td>';
     }else if((chkY + 1 < this.currYear) || (chkY == this.currYear && chkM + 1 < this.currMonth)){
         html += '<td class="farfuture">' + i + '</td>';
     }else {
-        html += '<td class="normal">' + i + '</td>';
+        html += '<td class="normal"><button id="button_normal" type="button" onclick="setBackgroundColorByClick(this)">' + i + '</button></td>';
     }
     // If Saturday, closes the row
     if ( dow == 6 ) {
@@ -159,6 +160,13 @@
     return document.getElementById(id);
     }
 
+    function setBackgroundColorByClick(clickedButton){
+        // needs to be fixed.
+        // if(clickedButton.id == "button_slots"){
+            (clickedButton.style.backgroundColor == '#7FFF00') ? clickedButton.style.backgroundColor='#8b20d5' : clickedButton.style.backgroundColor='#7FFF00';
+        // }
+    }
+
     // mögliche Uhrzeiten
     var slots = ["10:00 - 11:00", "11:00 - 12:00", "12:00 - 13:00", "14:00 - 15:00", "15:00 - 16:00", "16:00 - 17:00", "18:00 - 19:00", "19:00 - 20:00"];
     //zeitslots
@@ -172,7 +180,7 @@
         var seats = Array.from({length: 8}, () => Math.floor(Math.random() * 99));
 
         for( var i = 0; i < slots.length; i++){
-            text += "<tr>" + "<td>" + slots[i] + "</td>" + "<td>" + seats[i] + "</td>" + "/<tr>";
+            text += "<tr>" + "<td>" + '<button id="button_slots" type="button"' + ' onclick="setBackgroundColorByClick(this)">' + slots[i] + '</button>' + "</td>" + "<td>" + seats[i] + "</td>" + "/<tr>";
         }
 
         text += "</table>";

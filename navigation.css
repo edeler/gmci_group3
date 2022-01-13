@@ -173,3 +173,20 @@ output {
 output:after {
 	width: 5em;
 }
+
+#button_today{
+  height: auto;
+  /* background-color: white; */
+  color: blue;
+  font-size:x-large;
+  font-weight: bold;
+}
+
+#button_normal{
+  height: auto;
+  font-size: medium;
+}
+
+#button_slots{
+  
+}
