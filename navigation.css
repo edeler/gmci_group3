@@ -1,0 +1,175 @@
+
+html, body {
+  height:100%;
+}
+body {
+  font-size:100%;
+  line-height:1.5;
+  font-family: "Roboto Condensed", sans-serif;
+  background:white;
+  background-image:linear-gradient(white 0%, darken(white,12%) 100%);
+  color:#444;
+}
+
+*, *:before, *:after {
+  box-sizing:border-box;
+}
+
+.group :after{
+    content: "";
+    display: table;
+    clear: both;
+  
+}
+
+img {
+  max-width:100%;
+  height:auto;
+  vertical-align:baseline;
+}
+
+a {
+  text-decoration:none;
+}
+
+/* .max(@maxWidth;
+  @rules) {
+    @media only screen and (max-width: @maxWidth) {
+      @rules();
+    }
+  }
+
+.min(@minWidth;
+  @rules) {
+    @media only screen and (min-width: @minWidth) {
+      @rules();
+    }
+  } */
+
+
+.calendar-wrapper {
+  width:360px;
+  margin:3em auto;
+  padding:2em;
+  border:1px solid black;
+  border-radius:5px;
+  background:white;
+  
+}
+table {
+  clear:both;
+  width:100%;
+  border:1px solid black;
+  border-radius:3px;
+  border-collapse:collapse;
+  color:white;
+}
+td {
+  height:48px;
+  text-align:center;
+  vertical-align:middle;
+  border-right:1px solid black;
+  border-top:1px solid black;
+  width:100% / 7;
+  border:none;
+  color:black;
+  text-transform:uppercase;
+}
+td.not-current {
+  color:grey;
+}
+td.normal {
+  color: black;
+}
+td.today {
+  font-weight:700;
+  color:blue;
+  font-size:1.5em;
+}
+td.past {
+  color:red;
+}
+td.farfuture{
+    color:yellow;
+}
+thead td {
+  border:none;
+  color:black;
+  text-transform:uppercase;
+  font-size:1.5em;
+}
+#btnPrev {
+  float:left;
+  margin-bottom:20px;
+}
+
+#btnNext {
+  float:right;
+  margin-bottom:20px;
+}
+
+#btnPrev, #btnNext {
+  background:transparent;
+  border:none;
+  outline:none;
+  font-size:1em;
+  color:grey;
+  cursor:pointer;
+  font-family:"Roboto Condensed", sans-serif;
+  text-transform:uppercase;
+  transition:all 0.3s ease;
+}
+#btnPrev:hover , #btnNext:hover{
+    color:green;
+    font-weight:bold;
+}
+
+form {
+	position: relative;
+	width: 30em;
+	height: 20em;
+	font: bold 15px/30px Georgia;
+}
+
+input[type="range"].vertikal {
+	writing-mode: bt-lr;
+	/* IE */
+	
+	-webkit-appearance: slider-vertical;
+	/* WebKit */
+	
+	width: 10px;
+	height: 250px;
+	background-image: repeating-linear-gradient(0deg, white, white 8%, black 8%, black 9%);
+}
+
+label {
+	position: absolute;
+	left: 3em;
+	width: 3em;
+	height: 1em;
+}
+
+label#n1 {
+	top: 17em;
+}
+
+label#n2 {
+	top: -1em;
+}
+
+output {
+	position: absolute;
+	width: 3.5em;
+	height: 3.5em;
+	right: 0em;
+	color: white;
+	background-image: linear-gradient(160deg, white, lightgrey 10%, grey);
+	border-radius: 1em;
+	padding: 1em 0.5em;
+	display: inline-block;
+}
+
+output:after {
+	width: 5em;
+}
