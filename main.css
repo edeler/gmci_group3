@@ -1,0 +1,10 @@
+body{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.navigator{
+    background-color: bisque;
+}
