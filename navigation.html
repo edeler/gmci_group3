@@ -25,25 +25,28 @@
 </head>
 <body>
   <div>
-    <p> Bitte geben Sie die Anzahl an Personen an.</p>
-    <form oninput="x.value=parseInt(anzahl.value)">
-      <label for="anzahl" id="n1">1</label>
-      <input class="vertikal" name="anzahl" id="anzahl" type="range" min="1"
-      value="2" max="10" orient="vertical">
-      <label for="anzahl" id="n2">10</label>
-      <output name="x" for="anzahl">2</output>
-    </form>
+  <div class="timeslots-person_row">
+      <div class="person_number">
+        <p> Bitte geben Sie die Anzahl an Personen an.</p>
+        <form oninput="x.value=parseInt(anzahl.value)">
+          <label for="anzahl" id="n1">1</label>
+          <input class="vertikal" name="anzahl" id="anzahl" type="range" min="1"
+          value="2" max="10" orient="vertical">
+          <label for="anzahl" id="n2">10</label>
+          <output name="x" for="anzahl">2</output>
+        </form>
+      </div>
+      <div class="Zeitslots" id="Zeitslots">
+        Zeitslots
+      </div>
     </div>
-    <div class="Zeitslots" id="Zeitslots">
-      Zeitslots
-    </div>
-  <div class="calendar-wrapper">
-    <button id="btnPrev" type="button"> Prev</button>
-        <button id="btnNext" type="button">Next</button>
-    <div id="divCal"></div>
+    <div class="calendar-wrapper">
+      <button id="btnPrev" type="button" style="text-align:left;"> Prev</button>
+          <button id="btnNext" type="button" style="text-align:right;">Next</button>
+      <div id="divCal"></div>
 </div>
-<button><a href="main.html">Okay</a></button>
-<button><a href="main.html">Cancel</a></button>
+<button id="return_to_main"><a href="main.html">Okay</a></button>
+<button id="return_to_main"><a href="main.html">Cancel</a></button>
 <footer>
   <div>
       ©All rights reserved to gmci_group3 from LUH hci project.
