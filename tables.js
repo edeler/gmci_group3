@@ -144,6 +144,85 @@ function printTableListToConsole(){
     console.log(output);
 }
 
+// Setup all bar elements
+function setupBar() {
+    // Bottom row of bar tables
+    for (var i = 4; i <= 7; i++) {
+        var barElement = document.createElement("div");
+        barElement.className = 'bar-container-horizontal';
+        barElement.style = 'grid-column: ' + i + '; grid-row: 2;';
+
+        var table = document.createElement("div");
+        table.className = 'bar-table';
+        barElement.appendChild(table);
+        
+        var chair_left = document.createElement("div");
+        chair_left.classList.add('bar-chair');        
+
+        chair_left.addEventListener('click', function(ev) {
+            toggleBarChairSelection(this);
+        });
+
+        barElement.appendChild(chair_left);
+        
+        var chair_right = document.createElement("div");
+        chair_right.classList.add('bar-chair');        
+
+        chair_right.addEventListener('click', function(ev) {
+            toggleBarChairSelection(this);
+        });
+
+        barElement.appendChild(chair_right);
+        document.getElementById('bar').appendChild(barElement);
+    }
+
+    // Corner bar table
+    var barElement = document.createElement("div");
+    barElement.className = 'bar-container-horizontal';
+    barElement.style = 'grid-column: 8; grid-row: 2;';
+
+    var table = document.createElement("div");
+    table.className = 'bar-table';
+    table.style = 'width: 40%;';
+    barElement.appendChild(table);
+
+    document.getElementById('bar').appendChild(barElement);
+
+    // Right bar table
+    var barElement = document.createElement("div");
+    barElement.className = 'bar-container-horizontal';
+    barElement.style = 'grid-column: 8; grid-row: 1; display: flex;';
+
+    var table = document.createElement("div");
+    table.className = 'bar-table-vertical';
+    barElement.appendChild(table);
+    
+    var chairContainer = document.createElement("div");
+    chairContainer.style = 'display: flex; flex-direction: column; justify-content: center; width: 60%;';
+
+    var chair_upper = document.createElement("div");
+    chair_upper.classList.add('bar-chair');
+    chair_upper.style = 'width: 50%;';        
+
+    chair_upper.addEventListener('click', function(ev) {
+        toggleBarChairSelection(this);
+    });
+
+    chairContainer.appendChild(chair_upper);
+    
+    var chair_lower = document.createElement("div");
+    chair_lower.classList.add('bar-chair');
+    chair_lower.style = 'width: 50%;';
+
+    chair_lower.addEventListener('click', function(ev) {
+        toggleBarChairSelection(this);
+    });
+
+    chairContainer.appendChild(chair_lower);
+    barElement.appendChild(chairContainer);
+    document.getElementById('bar').appendChild(barElement);
+}
+
 // Mark tables that were selected by the user
 function toggleTableSelection(element) {
     if (element.childNodes[0].classList.contains("chair-selected")) {
@@ -263,6 +342,7 @@ var presetTables =
 function setupTables() {
     populateEmptyFields();
     removeEmptyFieldsForBar();
+    setupBar();
     presetTables.forEach(element => {
         setTable(element);
     });
