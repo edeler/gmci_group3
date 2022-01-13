@@ -10,47 +10,11 @@
 
 <body>
     <main>
+        <div class="table-pool" id="table-pool"></div>
         <div class="restaurant"> 
             <div style="display: flex; flex-direction: row; height: 60%;">
                 <div class="room dining-room" id="dining-room"></div>
-                <div class="room bar" id="bar">
-                    <div class="bar-container-horizontal"
-                         style = "grid-column: 4; grid-row: 2;">
-                        <div class="bar-table"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                    </div>
-                    <div class="bar-container-horizontal"
-                         style = "grid-column: 5; grid-row: 2;">
-                        <div class="bar-table"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                    </div>
-                    <div class="bar-container-horizontal"
-                         style = "grid-column: 6; grid-row: 2;">
-                        <div class="bar-table"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                    </div>
-                    <div class="bar-container-horizontal"
-                         style = "grid-column: 7; grid-row: 2;">
-                        <div class="bar-table"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                        <div class="bar-chair" onclick="toggleBarChairSelection(this)"></div>
-                    </div>
-                    <div class="bar-container-horizontal"
-                         style = "grid-column: 8; grid-row: 2;">
-                        <div class="bar-table" style="width: 40%;"></div>
-                    </div>
-                    <div class="bar-container-horizontal"
-                         style = "grid-column: 8; grid-row: 1; display: flex;">
-                        <div class="bar-table-vertical"></div>
-                        <div style="display: flex; flex-direction: column; justify-content: center; width: 60%;">
-                            <div class="bar-chair" onclick="toggleBarChairSelection(this)" style="width: 50%;"></div>
-                            <div class="bar-chair" onclick="toggleBarChairSelection(this)" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="room bar" id="bar"></div>
             </div>
             <div class="room outside-area" id="outside"></div>
         </div>

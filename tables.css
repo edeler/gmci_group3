@@ -20,6 +20,22 @@
     font-size: 18px;
 }
 
+footer {
+    height: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+    border: none;
+}
+
+button {
+    margin: 0 3em;
+    padding: 0.5em;
+}
+
+/************** rooms **************/
+
 .restaurant {
     width: 95%; 
     height: 830px; 
@@ -56,11 +72,18 @@
     grid-template-columns: repeat(23, var(--grid-size));
 }
 
+/************** tables **************/
+
 .table-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: none;
+}
+
+.table-container-pool {
+    width: var(--grid-size);
+    height: var(--grid-size);
 }
 
 .table-container:hover .table {
@@ -87,10 +110,6 @@
     background-color: var(--table-color);
 }
 
-.chair {
-    background-color: var(--chair-color);
-}
-
 .table-container-east-west {
     flex-direction: row;
 }
@@ -98,11 +117,6 @@
 .table-east-west {
     height: 100%;
     width: 70%;
-}
-
-.chair-east-west {
-    height: 35%;
-    width: 10%;
 }
 
 .table-container-north-south {
@@ -114,10 +128,31 @@
     width: 100%;
 }
 
+.table-selected {
+    background-color: var(--table-color-selected);
+}
+
+/************** chairs **************/
+
+.chair {
+    background-color: var(--chair-color);
+}
+
+.chair-selected {
+    background-color: var(--chair-color-selected) !important;
+}
+
+.chair-east-west {
+    height: 35%;
+    width: 10%;
+}
+
 .chair-north-south {
     height: 10%;
     width: 35%;
 }
+
+/************** bar **************/
 
 .bar-table {
     height: 40%;
@@ -143,24 +178,15 @@
     background-color: var(--chair-color-hover);
 }
 
-.table-selected {
-    background-color: var(--table-color-selected);
-}
+/************** table pool **************/
 
-.chair-selected {
-    background-color: var(--chair-color-selected);
-}
-
-footer {
-    height: 5em;
+.table-pool {
+    background-color: var(--floor-color);
+    height: var(--grid-size);
+    margin: 1em 10%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-    border: none;
-}
-
-button {
-    margin: 0 3em;
-    padding: 0.5em;
+    grid-template-rows: var(--grid-size);
+    grid-template-columns: repeat(19, var(--grid-size));
+    column-gap: 0.7em;
+    padding: 0.6em;
 }
