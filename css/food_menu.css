@@ -16,13 +16,13 @@ body{
     width: 720px;
     font-size: medium;
     font-family: 'Courier New', monospace;
-    border-radius: 7px;
+    /* border-radius: 7px;
     border-bottom: 5px;
     border-top: 5px;
     border-left: 5px;
     border-right: 5px;
     border-color: black;
-    border-style: double;
+    border-style: double; */
     box-shadow: 0 0 15px rgba(34, 34, 34, 0.795);
 }
 
@@ -31,6 +31,7 @@ body{
     box-shadow: 0 0 15px rgb(178, 161, 140) inset;
     font-style: italic;
     font-size: small;
+    width: 100%;
 }
 
 .title_Sausage_Party_Menu{
@@ -44,11 +45,13 @@ body{
     text-align: center;
     height: 40px;
     box-shadow: 0 0 5px rgb(196, 176, 152) inset;
+    width: 100%;
 }
 
-div > .meals{
+.meals{
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .meal_list{
@@ -56,6 +59,7 @@ div > .meals{
     flex-direction: column;
     background-color: bisque;
     box-shadow: 0 0 15px rgb(196, 176, 152) inset;
+    width: 100%;
 }
 
 .meal_list_price{
@@ -99,7 +103,7 @@ div > .meals{
 
 #mariachi_background{
     height: 250px;
-    background-image: url(mariachi.png);
+    background-image: url('../assets/mariachi.png');
     background-repeat: no-repeat;
     background-position-y: top;
     background-size: 100% 100%;

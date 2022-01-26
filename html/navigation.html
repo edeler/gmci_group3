@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+  <link rel="stylesheet" type="text/css" href="../css/layout.css">
+  <script src="../js/navigation.js"></script>
+  <title>
+    Sausage Party
+  </title>
+</head>
+
+<body>
+  <header>
+    <h1>Sausage Party</h1>
+  </header>
+  <main>
+    <div class="timeslots-person_row">
+      <div class="person_number">
+        <p> Bitte geben Sie die Anzahl an Personen an.</p>
+        <form oninput="x.value=parseInt(anzahl.value)">
+          <label for="anzahl" id="n1" style="left: 0;">1</label>
+          <input class="vertikal" name="anzahl" id="anzahl" type="range" min="1" value="2" max="10" orient="vertical">
+          <label for="anzahl" id="n2" style="left: 0;">10</label>
+          <output name="x" for="anzahl">2</output>
+        </form>
+      </div>
+      <div class="Zeitslots" id="Zeitslots">
+        Zeitslots
+      </div>
+      <div class="calendar-wrapper">
+        <button id="btnPrev" type="button" style="text-align:left;"> Prev</button>
+        <button id="btnNext" type="button" style="text-align:right;">Next</button>
+        <div id="divCal"></div>
+      </div>
+    </div>
+  </main>
+  <div class="button-bar">
+    <button id="return_to_main" onclick="window.location.href='main.html'">Okay</button>
+    <button id="return_to_main" onclick="window.location.href='main.html'">Cancel</a></button>
+  </div>
+  <footer>
+    <div>
+      ©All rights reserved to gmci_group3 from LUH hci project.
+    </div>
+    <div title="page_number"></div>
+  </footer>
+</body>
