@@ -114,7 +114,7 @@ td.past {
   color:red;
 }
 td.farfuture{
-    color:yellow;
+    color:red;
 }
 thead td {
   border:none;
@@ -187,8 +187,8 @@ output {
 	width: 3.5em;
 	height: 3.5em;
 	right: 0em;
-	color: white;
-	background-image: linear-gradient(160deg, white, lightgrey 10%, grey);
+	color: black;
+	background-color: #7FFF00;
 	border-radius: 1em;
 	padding: 1em 0.5em;
 	display: inline-block;
@@ -206,14 +206,33 @@ output:after {
   font-weight: bold;
 }
 
+#button_today_clicked{
+  height: auto;
+  /* background-color: white; */
+  color: blue;
+  font-size:x-large;
+  font-weight: bold;
+  background-color: #7FFF00;
+}
+
 #button_normal{
   height: auto;
   font-size: medium;
+}
+#button_normal_clicked{
+  height: auto;
+  font-size: medium;
+  background-color: #7FFF00;
 }
 
 #button_slots{
   height: auto;
   font-size: medium;
+}
+#button_slots_clicked{
+  height: auto;
+  font-size: medium;
+  background-color: #7FFF00;
 }
 
 #return_to_main{

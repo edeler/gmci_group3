@@ -109,13 +109,13 @@
     // console.log(this.currDay)
     if (chkY == this.currYear && chkM == this.currMonth && i == this.currDay) {
         
-        html += '<td class="today"><button id="button_today" type="button" onclick="setBackgroundColorByClick(this)">' + i + '</button></td>';
+        html += '<td class="today"><button id="button_today" type="button" onclick="setBackgroundColorByClick_calendar(this)">' + i + '</button></td>';
     }else if((chkY > this.currYear) || (chkY >= this.currYear && chkM >= this.currMonth) && i < this.currDay){
         html += '<td class="past">' + i + '</td>';
     }else if((chkY + 1 < this.currYear) || (chkY == this.currYear && chkM + 1 < this.currMonth)){
         html += '<td class="farfuture">' + i + '</td>';
     }else {
-        html += '<td class="normal"><button id="button_normal" type="button" onclick="setBackgroundColorByClick(this)">' + i + '</button></td>';
+        html += '<td class="normal"><button id="button_normal" type="button" onclick="setBackgroundColorByClick_calendar(this)">' + i + '</button></td>';
     }
     // If Saturday, closes the row
     if ( dow == 6 ) {
@@ -160,11 +160,38 @@
     return document.getElementById(id);
     }
 
+    function setBackgroundColorByClick_calendar(clickedButton){
+        if(clickedButton.id == 'button_normal_clicked' ){
+            clickedButton.id = 'button_normal';
+        }else if(clickedButton.id == 'button_today_clicked'){
+            clickedButton.id = 'button_today';
+        }else if(document.getElementById('button_normal_clicked') != null || document.getElementById('button_today_clicked') != null){
+            if(document.getElementById('button_normal_clicked') != null){
+                document.getElementById('button_normal_clicked').id = 'button_normal';
+            }else{
+                document.getElementById('button_today_clicked').id = 'button_today';
+            }
+            if(clickedButton.id == 'button_normal'){
+                clickedButton.id = 'button_normal_clicked';
+            }else{
+                clickedButton.id = 'button_today_clicked';
+            }
+        }else if(clickedButton.id == 'button_normal'){
+            clickedButton.id = 'button_normal_clicked';
+        }else if(clickedButton.id == 'button_today'){
+            clickedButton.id = 'button_today_clicked';
+        }
+    }
+
     function setBackgroundColorByClick(clickedButton){
-        // needs to be fixed.
-        // if(clickedButton.id == "button_slots"){
-            (clickedButton.style.backgroundColor == '#7FFF00') ? clickedButton.style.backgroundColor='#8b20d5' : clickedButton.style.backgroundColor='#7FFF00';
-        // }
+        if(clickedButton.id == 'button_slots_clicked'){
+            clickedButton.id = 'button_slots';
+        }else if(document.getElementById('button_slots_clicked') != null){
+            document.getElementById('button_slots_clicked').id = 'button_slots';
+            clickedButton.id = 'button_slots_clicked';
+        }else if(clickedButton.id == 'button_slots'){
+            clickedButton.id = 'button_slots_clicked';
+        }
     }
 
     // mögliche Uhrzeiten
