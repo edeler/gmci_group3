@@ -1,22 +1,33 @@
 <!--This document has the other documents as imports to make a design primarly.-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="navigation.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
     <script src="main.js"></script>
+    <title>
+        Main
+    </title>
 </head>
+
 <body>
-    <h1>Sausage Party</h1>
-    <div>
-            <ul>
-              <li><a href="navigation.html">Date, Time and Guests</a></li>
-              <li><a href="tables.html">Tables</a></li>
-              <li><a href="food_menu.html">Food_menu</a></li>
-              <li><a href="extras.html">Extras</a></li>
-            </ul>
+    <header>
+        <h1>Sausage Party</h1>
+    </header>
+    <div style="margin: auto;">
+        <ul>
+            <li><a href="navigation.html">Date, Time and Guests</a></li>
+            <li><a href="tables.html">Tables</a></li>
+            <li><a href="food_menu.html">Food_menu</a></li>
+            <li><a href="extras.html">Extras</a></li>
+        </ul>
     </div>
-        <button><a href="email.html">Finish my reservation</a></button>
+    <div class="button-bar">
+        <button onclick="window.location.href='email.html'">Okay</button>
+        <button onclick="window.location.href='main.html'">Cancel</button>
+    </div>
     <footer>
         <div>
             ©All rights reserved to gmci_group3 from LUH hci project.

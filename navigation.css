@@ -1,17 +1,9 @@
-
-html, body {
-  height:100%;
-}
-body {
+main {
   display: flex;
   margin: auto;
   flex-direction: column;
   align-items: center;
-  width: 500px;
 
-  font-size:100%;
-  line-height:1.5;
-  font-family: "Roboto Condensed", sans-serif;
   background:white;
   background-image:linear-gradient(white 0%, darken(white,12%) 100%);
   color:#444;
@@ -74,9 +66,10 @@ a {
 }
 
 .timeslots-person_row{
+  align-items: center;
   display: flex;
   flex-direction: row;
-  align-content: center;
+  column-gap: 2em;
 }
 
 

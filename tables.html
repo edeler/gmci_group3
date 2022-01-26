@@ -3,12 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pick your tables</title>
     <link rel="stylesheet" type="text/css" href="tables.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
     <script src="tables.js"></script>
+    <title>
+        Pick your tables
+    </title>
 </head>
 
 <body>
+    <header>
+        <h1>Sausage Party</h1>
+    </header>
     <main>
         <div class="table-pool" id="table-pool"></div>
         <div class="restaurant"> 
@@ -18,8 +24,10 @@
             </div>
             <div class="room outside-area" id="outside"></div>
         </div>
-        <button><a href="main.html">Okay</a></button>
-        <button><a href="main.html">Cancel</a></button>
+        <div class="button-bar">
+            <button onclick="window.location.href='main.html'">Okay</button>
+            <button onclick="window.location.href='main.html'">Cancel</button>
+        </div>
     </main>
     <footer>
         <div>

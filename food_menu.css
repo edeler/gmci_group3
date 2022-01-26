@@ -26,7 +26,7 @@ body{
     box-shadow: 0 0 15px rgba(34, 34, 34, 0.795);
 }
 
-footer{
+.menu{
     background-color: rgb(162, 152, 140);
     box-shadow: 0 0 15px rgb(178, 161, 140) inset;
     font-style: italic;
