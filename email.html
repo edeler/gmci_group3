@@ -1,19 +1,39 @@
 <!--This document has the other documents as imports to make a design primarly.-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="navigation.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
     <script src="main.js"></script>
+    <title>
+        Credentials
+    </title>
 </head>
+
 <body>
-    <h1>Sausage Party</h1>
-    <div>
-        <div >Vorname: 
-            <input type="text">
+    <header>
+        <h1>Sausage Party</h1>
+    </header>
+    <main>
+        <div>
+            <div>Vorname:
+                <input type="text">
+            </div>
+            <div>Nachname:
+                <input type="text">
+            </div>
+            <div>Email:
+                <input type="text">
+            </div>
+            <div>Telefonnummer:
+                <input type="text">
+            </div>
         </div>
-        <div >Nachname: 
-            <input type="text">
+        <div class="button-bar">
+            <button onclick="window.location.href='congrats.html'">Okay</button>
+            <button onclick="window.location.href='main.html'">Cancel</a></button>
         </div>
         <div >Email: 
             <input type="email">
