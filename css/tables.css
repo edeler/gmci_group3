@@ -1,5 +1,5 @@
 :root {
-    --grid-size: 4.2em;
+    --grid-size: 3em;
     --wall-width: 2px;
 
     --floor-color: rgb(250, 231, 167);
@@ -16,19 +16,19 @@
 /************** rooms **************/
 
 .restaurant {
-    width: 95%; 
-    height: 830px; 
+    width: 69em;
     margin: auto;
+    margin-bottom: 2em;
 }
 
 .room {
     background-color: var(--floor-color);
     display: grid;
     place-content: center;
+    padding: 1%;
 }
 
 .bar {
-    width: 55%;
     grid-template-rows: repeat(6, var(--grid-size));
     grid-template-columns: repeat(12, var(--grid-size));
 
@@ -38,7 +38,6 @@
 }
 
 .dining-room {
-    width: 45%;
     grid-template-rows: repeat(6, var(--grid-size));
     grid-template-columns: repeat(10, var(--grid-size));
     
@@ -46,9 +45,9 @@
 }
 
 .outside-area {
-    height: 40%;
+    /* width: 95%; */
     grid-template-rows: repeat(4, var(--grid-size));
-    grid-template-columns: repeat(23, var(--grid-size));
+    grid-template-columns: repeat(22, var(--grid-size));
 }
 
 /************** tables **************/
@@ -162,10 +161,11 @@
 .table-pool {
     background-color: var(--floor-color);
     height: var(--grid-size);
-    margin: 1em 10%;
+    margin: 1em auto;
     display: flex;
     grid-template-rows: var(--grid-size);
     grid-template-columns: repeat(19, var(--grid-size));
     column-gap: 0.7em;
     padding: 0.6em;
+    width: 50%;
 }
