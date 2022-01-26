@@ -1,3 +1,7 @@
+:root {
+  --border-radius: 8px;
+}
+
 main {
   display: flex;
   margin: auto;
@@ -50,7 +54,7 @@ a {
   margin:3em auto;
   padding:2em;
   border:1px solid black;
-  border-radius:5px;
+  border-radius:var(--border-radius);
   background:white;
   
 }
@@ -76,7 +80,7 @@ a {
 table {
   clear:both;
   width:100%;
-  border:1px solid black;
+  /* border:1px solid black; */
   border-radius:3px;
   border-collapse:collapse;
   color:white;
@@ -143,8 +147,8 @@ thead td {
 
 form {
 	position: relative;
-	width: 30em;
-	height: 20em;
+	/* width: 30em;
+	height: 20em; */
 	font: bold 15px/30px Georgia;
 }
 
@@ -161,30 +165,16 @@ input[type="range"].vertikal {
 }
 
 label {
-	position: absolute;
-	left: 3em;
-	width: 3em;
-	height: 1em;
-}
-
-label#n1 {
-	top: 17em;
+  margin-left: 0.5em;
 }
 
 label#n2 {
-	top: -1em;
+  margin-top: auto;
 }
 
-output {
-	position: absolute;
-	width: 3.5em;
-	height: 3.5em;
-	right: 0em;
+#person-wrapper output {
 	color: black;
-	background-color: #7FFF00;
-	border-radius: 1em;
 	padding: 1em 0.5em;
-	display: inline-block;
 }
 
 output:after {
@@ -230,4 +220,17 @@ output:after {
 
 #return_to_main{
   font-size: medium;
+}
+
+#timeslot-wrapper {
+  padding: 2.4em 0;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+}
+
+#person-wrapper {
+  width: 250px;
+  padding: 5.2em 0;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
 }
