@@ -8,9 +8,9 @@
 }
 
 header {
-    background-color: blanchedalmond;
+    background-color: rgba(255, 245, 223, 0.562);
     margin: 3em 0;
-    box-shadow: 300px 0px 100px 0px rgba(239, 199, 135, 0.569) inset;
+    box-shadow: 400px 0px 100px 0px bisque inset;
 }
 
 header h1 {
@@ -19,7 +19,7 @@ header h1 {
     font-size: xx-large;
     /* padding: 0.2em 0; */
     border-radius: 20px;
-    border-color: 5px solid black;
+    border-color: 5px solid rgba(49, 0, 0, 0.75);
 }
 
 #comment_header{
@@ -83,7 +83,9 @@ button {
     bottom: 1em;
     right: 1em;
 
-    border: 2px solid black;
+    border: 5px solid rgba(49, 0, 0, 0.75);
+    background-color: rgba(255, 245, 223, 0.562);
+    box-shadow: 0 0 15px bisque inset;
     border-radius: var(--border-radius);
     padding: 1em;
 
