@@ -5,7 +5,7 @@
   }
 
 head{
-    background-color: rgba(255, 245, 223, 0.562);
+    background-color: bisque;
 }
 
 body{
@@ -29,7 +29,7 @@ body{
 .menu{
     /* background-color: rgb(162, 152, 140); */
     background-color: rgba(255, 245, 223, 0.562);
-    box-shadow: 0 0 20px rgba(210, 203, 186, 0.562) inset;
+    box-shadow: 10px 10px 40px bisque inset;
     border-radius: 8px;
     border: 5px solid rgb(58, 0, 0);
     font-style: italic;
@@ -42,14 +42,14 @@ body{
     align-items:center;
     justify-content:center;
 
-    background-color: rgba(255, 234, 189, 0.66);
+    background-color: bisque;
     font-size: x-large;
     font-weight: bold;
     text-align: center;
     height: 40px;
     box-shadow: 0 0 5px rgb(196, 176, 152) inset;
     width: 100%;
-    color: rgba(49, 0, 0, 0.75);
+    color: rgba(49, 0, 0, 0.868);
 }
 
 .meals{
