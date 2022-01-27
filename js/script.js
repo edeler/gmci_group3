@@ -65,13 +65,13 @@ function generateBookingNotification() {
 
     var tables = sessionStorage.getItem('tables');
     if (tables > 0) {
-        booking_field.innerHTML += '</br></br>' + tables + ' Tables';
+        booking_field.innerHTML += '</br></br>' + tables + ' Tische';
     }
 
     var barChairs = sessionStorage.getItem('barChairs');
     if (barChairs > 0) {
         if (tables == 0) booking_field.innerHTML += '</br>';
-        booking_field.innerHTML += '</br>' + barChairs + ' Bar Chairs';
+        booking_field.innerHTML += '</br>' + barChairs + ' Barplätze';
     }
 }
 

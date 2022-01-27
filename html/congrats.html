@@ -28,13 +28,25 @@
     <main>
         <h1>Congratulations</h1>
         <h2>You finished your reservation, see you soon!</h2>
-        <img
-            src="https://media0.giphy.com/media/g9582DNuQppxC/giphy.gif?cid=ecf05e47061m86y442ew97inly0unbdzrx14fqhcul2fn9c3&rid=giphy.gif&ct=g">
+        <img src="https://media0.giphy.com/media/g9582DNuQppxC/giphy.gif?cid=ecf05e47061m86y442ew97inly0unbdzrx14fqhcul2fn9c3&rid=giphy.gif&ct=g">
+        <div id="summary"></div>
     </main>
     <footer>
+        <div id="booking-notification"><h4 style="margin: 0;">Booking</h4></div>
         <div>
             ©All rights reserved to gmci_group3 from LUH hci project.
         </div>
         <div title="page_number"></div>
     </footer>
 </body>
+
+<script>
+    window.onload = function() {
+        if (sessionStorage.getItem('timeBooked') == 'true') {
+            generateBookingNotification();
+            var noti = document.getElementById('booking-notification');
+            document.getElementById('summary').innerHTML = noti.innerHTML;
+            noti.style.display = 'none';
+        }
+    };
+</script>

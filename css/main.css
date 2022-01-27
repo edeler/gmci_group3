@@ -8,3 +8,11 @@ body{
 .navigator{
     background-color: bisque;
 }
+
+#summary {
+    font-size: 22px;
+    margin-top: 2em;
+    /* border: 2px solid black;
+    padding: 1em;
+    border-radius: 8px; */
+}
