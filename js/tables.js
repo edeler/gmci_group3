@@ -298,12 +298,16 @@ function toggleTableSelection(element) {
             element.childNodes[1].classList.remove("table-selected");
             element.childNodes[2].classList.remove("chair-selected");
             numberOfBookableTables++;
+            numberOfBookableBarChairs += 2;
         } else if (numberOfBookableTables > 0) {
             element.childNodes[0].classList.add("chair-selected");
             element.childNodes[1].classList.add("table-selected");
             element.childNodes[2].classList.add("chair-selected");
             numberOfBookableTables--;
+            numberOfBookableBarChairs -= 2;
         }
+        numberOfBookableTables = Math.ceil(numberOfBookableBarChairs / 2);
+        saveValues();
     }
 }
 
@@ -316,6 +320,8 @@ function toggleBarChairSelection(element) {
         element.classList.add("chair-selected");
         numberOfBookableBarChairs--;
     }
+    numberOfBookableTables = Math.ceil(numberOfBookableBarChairs / 2);
+    saveValues();
 }
 
 // Rotate a table 90°
@@ -462,8 +468,15 @@ function setupTables() {
 }
 
 // Global variables
-var numberOfBookableTables = 4;
-var numberOfBookableBarChairs = 2;
+var numberOfBookableBarChairs = 0;
+var numberOfBookableTables = 0;
 
 // Run setup on load
-window.onload = function() { setupTables(); };
+window.onload = function() { 
+    setupTables();
+    if (sessionStorage.getItem('timeBooked') == 'true') {
+        generateBookingNotification();
+    }
+    numberOfBookableBarChairs = sessionStorage.getItem('persons');
+    numberOfBookableTables = Math.ceil(numberOfBookableBarChairs / 2);
+};

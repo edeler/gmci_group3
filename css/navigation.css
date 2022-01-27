@@ -55,6 +55,7 @@ a {
 
 .calendar-wrapper {
   width:360px;
+  height: 512px;
   margin:3em auto;
   padding:2em;
   background-color: var(--background-col-nav-container);
@@ -241,6 +242,23 @@ output:after {
 
 #return_to_main{
   font-size: medium;
+}
+
+#timeslot-wrapper {
+  height: 512px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
+}
+
+#person-wrapper {
+  width: 250px;
+  height: 512px;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: var(--border-radius);
 }
 
 #mail-form {

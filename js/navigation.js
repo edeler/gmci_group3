@@ -163,13 +163,17 @@
     function setBackgroundColorByClick_calendar(clickedButton){
         if(clickedButton.id == 'button_normal_clicked' ){
             clickedButton.id = 'button_normal';
+            sessionStorage.removeItem('date');
         }else if(clickedButton.id == 'button_today_clicked'){
             clickedButton.id = 'button_today';
+            sessionStorage.removeItem('date');
         }else if(document.getElementById('button_normal_clicked') != null || document.getElementById('button_today_clicked') != null){
             if(document.getElementById('button_normal_clicked') != null){
                 document.getElementById('button_normal_clicked').id = 'button_normal';
+                sessionStorage.removeItem('date');                
             }else{
                 document.getElementById('button_today_clicked').id = 'button_today';
+                sessionStorage.removeItem('date');
             }
             if(clickedButton.id == 'button_normal'){
                 clickedButton.id = 'button_normal_clicked';
@@ -181,17 +185,20 @@
         }else if(clickedButton.id == 'button_today'){
             clickedButton.id = 'button_today_clicked';
         }
+        saveValues();
     }
 
     function setBackgroundColorByClick(clickedButton){
         if(clickedButton.id == 'button_slots_clicked'){
             clickedButton.id = 'button_slots';
+            sessionStorage.removeItem('time');
         }else if(document.getElementById('button_slots_clicked') != null){
             document.getElementById('button_slots_clicked').id = 'button_slots';
             clickedButton.id = 'button_slots_clicked';
         }else if(clickedButton.id == 'button_slots'){
             clickedButton.id = 'button_slots_clicked';
         }
+        saveValues();
     }
 
     // mögliche Uhrzeiten
@@ -220,4 +227,5 @@
     window.onload = function(){
         this.start_calendar();
         this.zeit_slot();
+        resetValues();
     }
