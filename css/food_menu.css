@@ -46,6 +46,7 @@ body{
     height: 40px;
     box-shadow: 0 0 5px rgb(196, 176, 152) inset;
     width: 100%;
+    color: rgba(49, 0, 0, 0.75);
 }
 
 .meals{

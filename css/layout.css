@@ -4,14 +4,18 @@
 }
 
 header {
-    background-color: #444;
+    background-color: blanchedalmond;
     margin: 3em 0;
+    box-shadow: 350px 0px 50px 0px bisque inset;
+    
 }
 
 header h1 {
-    color: #ddd;
+    color: rgba(49, 0, 0, 0.75);
     margin-left: 20%;
     padding: 0.2em 0;
+    border-radius: 10px;
+    border-color: black;
 }
 
 body {

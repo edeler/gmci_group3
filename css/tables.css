@@ -1,16 +1,20 @@
 :root {
     --grid-size: 3em;
-    --wall-width: 2px;
+    --wall-width: 4px;
+    --wall-rest-width: 10px;
 
-    --floor-color: rgb(250, 231, 167);
+    /* --floor-color: rgb(250, 231, 167);
     --table-color: goldenrod;
-    --chair-color: darkgoldenrod;
-    --floor-color-hover: rgb(216, 224, 104);
-    --table-color-hover: rgb(184, 250, 31);
-    --chair-color-hover: rgb(132, 179, 22);
-    --wall-color: black;
-    --chair-color-selected: rgb(61, 168, 168);
-    --table-color-selected: rgb(83, 204, 204);
+    --chair-color: darkgoldenrod; */
+    --floor-color: rgb(58, 0, 0);
+    --table-color: bisque;
+    --chair-color: rgb(226, 180, 124);
+    --floor-color-hover: rgb(224, 104, 104);
+    --table-color-hover: rgb(225, 255, 0);
+    --chair-color-hover: rgb(154, 226, 30);
+    --wall-color: rgb(27, 0, 0);
+    --chair-color-selected: rgb(104, 217, 255);
+    --table-color-selected: rgb(104, 255, 255);
 }
 
 /************** rooms **************/
@@ -19,6 +23,10 @@
     width: 69em;
     margin: auto;
     margin-bottom: 2em;
+    border-top: var(--wall-rest-width) solid var(--wall-color);
+    border-right: var(--wall-rest-width) solid var(--wall-color);
+    border-left: var(--wall-rest-width) solid var(--wall-color);
+    border-bottom: var(--wall-rest-width) solid var(--wall-color);
 }
 
 .room {
@@ -32,8 +40,8 @@
     grid-template-rows: repeat(6, var(--grid-size));
     grid-template-columns: repeat(12, var(--grid-size));
 
-    border-top: var(--wall-width) solid var(--wall-color);
-    border-right: var(--wall-width) solid var(--wall-color);
+    /* border-top: var(--wall-width) solid var(--wall-color); */
+    /* border-right: var(--wall-width) solid var(--wall-color); */
     border-bottom: var(--wall-width) solid var(--wall-color);
 }
 
@@ -41,7 +49,8 @@
     grid-template-rows: repeat(6, var(--grid-size));
     grid-template-columns: repeat(10, var(--grid-size));
     
-    border: var(--wall-width) solid var(--wall-color);
+    border-bottom: var(--wall-width) solid var(--wall-color);
+    border-right: var(--wall-width) solid var(--wall-color);
 }
 
 .outside-area {
@@ -168,4 +177,8 @@
     column-gap: 0.7em;
     padding: 0.6em;
     width: 50%;
+    border-top: var(--wall-rest-width) solid var(--wall-color);
+    border-right: var(--wall-rest-width) solid var(--wall-color);
+    border-left: var(--wall-rest-width) solid var(--wall-color);
+    border-bottom: var(--wall-rest-width) solid var(--wall-color);
 }
