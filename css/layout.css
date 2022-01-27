@@ -18,11 +18,12 @@ header h1 {
     border-color: 5px solid black;
 }
 
-.main_navigation{
+#comment_header{
+    font-size: medium;
+    font-style: italic;
+    font-weight: normal;
     color: rgba(49, 0, 0, 0.75);
     text-align: center;
-    font-weight: bold;
-    font-size: large;
 }
 
 ol li{
