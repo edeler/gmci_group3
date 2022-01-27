@@ -6,15 +6,27 @@
 header {
     background-color: blanchedalmond;
     margin: 3em 0;
-    box-shadow: 350px 0px 50px 0px bisque inset;
+    box-shadow: 300px 0px 100px 0px rgba(239, 199, 135, 0.569) inset;
 }
 
 header h1 {
     color: rgba(49, 0, 0, 0.75);
-    margin-left: 20%;
-    padding: 0.2em 0;
-    border-radius: 10px;
+    margin-right: 33%;
+    font-size: xx-large;
+    /* padding: 0.2em 0; */
+    border-radius: 20px;
     border-color: 5px solid black;
+}
+
+.main_navigation{
+    color: rgba(49, 0, 0, 0.75);
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+ol li{
+    display: inline-block;
 }
 
 body {
