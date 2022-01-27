@@ -12,6 +12,7 @@ body{
 #summary {
     font-size: 22px;
     margin-top: 2em;
+    max-width: 20%;
     /* border: 2px solid black;
     padding: 1em;
     border-radius: 8px; */

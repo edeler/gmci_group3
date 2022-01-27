@@ -73,6 +73,18 @@ function generateBookingNotification() {
         if (tables == 0) booking_field.innerHTML += '</br>';
         booking_field.innerHTML += '</br>' + barChairs + ' Barplätze';
     }
+
+    var p = sessionStorage.getItem('Pasta');
+    if (p != null && p > 0) booking_field.innerHTML += '</br></br>' + p + ' Pasta';
+
+    var c = sessionStorage.getItem('Coffee');
+    if (c != null && c > 0) booking_field.innerHTML += '</br>' + c + ' Coffee';
+
+    var m = sessionStorage.getItem('Mariachi');
+    if (m != null && m > 0) booking_field.innerHTML += '</br>' + m + ' Mariachi';
+
+    var extras = sessionStorage.getItem('extras');
+    if (extras != null && extras != '') booking_field.innerHTML += '</br></br>' + extras;
 }
 
 function getDataAndSwitchTo(page) {

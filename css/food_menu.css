@@ -126,7 +126,7 @@ body{
     background-color: rgba(255, 246, 228, 0.736);
 }
 
-#price{
+.price{
     font-weight: bold;
     width: 40%;
     text-align: right;

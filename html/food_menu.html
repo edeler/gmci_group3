@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/food_menu.css">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <script src="../js/food_menu.js"></script>
     <script src="../js/script.js"></script>
     <title>
         Menu
@@ -36,14 +37,14 @@
                     <ul class="Food">
                         <h1 id="food">Food</h1>
                         <p style="text-align:left;">
-                            <span style="float:right;" id="price">
+                            <span style="float:right;" class="price">
                                 small moderate big
                             </span>
                         </p>
                         <li id="Pizza">
                             <p style="text-align:left;">
                                 1. pizza magherita
-                                <span style="float:right;" id="price">
+                                <span style="float:right;" class="price">
                                     3.00$ 6.00$ 8.00$
                                 </span>
                             </p>
@@ -52,7 +53,7 @@
                         <li id="Pasta">
                             <p style="text-align:left;">
                                 2. pasta
-                                <span style="float:right;" id="price">
+                                <span style="float:right;" class="price" id="Pasta-price">
                                     8.00$
                                 </span>
                             </p>
@@ -62,7 +63,7 @@
                         <li id="Sausage">
                             <p style="text-align:left;">
                                 3. sausage party
-                                <span style="float:right;" id="price">
+                                <span style="float:right;" class="price">
                                     8.00$
                                 </span>
                         </li>
@@ -73,7 +74,7 @@
                         <li id="Tea">
                             <p style="text-align:left;">
                                 4. black tea
-                                <span style="float:right;" id="price">
+                                <span style="float:right;" class="price">
                                     4.00$
                                 </span>
                             </p>
@@ -82,7 +83,7 @@
                         <li id="Coffee">
                             <p style="text-align:left;">
                                 5. coffee
-                                <span style="float:right;" id="price">
+                                <span style="float:right;" class="price" id="Coffee-price">
                                     4.00$
                                 </span>
                             </p>
@@ -95,7 +96,7 @@
                         <li>
                             <p style="text-align:left;">
                                 6. mariachi
-                                <span style="float:right;" id="price">
+                                <span style="float:right;" class="price" id="Mariachi-price">
                                     15.00$
                                 </span>
                             </p>
@@ -137,5 +138,6 @@
         if (sessionStorage.getItem('timeBooked') == 'true') {
             generateBookingNotification();
         }
+        addListeners();
     };
 </script>
