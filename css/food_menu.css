@@ -65,7 +65,8 @@ body{
     width: 100%;
 }
 .menu_footer{
-    background-color: transparent;
+    /* background-color: blanchedalmond */
+    font-size: x-small;
 }
 
 .meal_list_price{
@@ -75,10 +76,8 @@ body{
 }
 
 .ingredients{
+    font-size: medium;
     font-style: italic;
-    font-size: x-small;
-    font-weight: bold;
-    color: rgba(49, 0, 0, 0.75);
 }
 
 #mariachi{
@@ -112,7 +111,7 @@ body{
 }
 
 #mariachi_background{
-    height: 270px;
+    height: 250px;
     background-image: url('../assets/mariachi.png');
     background-repeat: no-repeat;
     background-position-y: top;
