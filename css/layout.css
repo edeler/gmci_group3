@@ -7,7 +7,6 @@ header {
     background-color: blanchedalmond;
     margin: 3em 0;
     box-shadow: 350px 0px 50px 0px bisque inset;
-    
 }
 
 header h1 {
@@ -15,7 +14,7 @@ header h1 {
     margin-left: 20%;
     padding: 0.2em 0;
     border-radius: 10px;
-    border-color: black;
+    border-color: 5px solid black;
 }
 
 body {

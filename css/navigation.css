@@ -1,5 +1,9 @@
 :root {
   --border-radius: 8px;
+  --background-col-nav: white;
+  --background-col-nav-container: rgba(255, 245, 223, 0.562);
+  --box-shadow-nav-container: 0 0 15px rgb(178, 161, 140) inset;
+  --border-col-nav-container: 5px solid rgb(58, 0, 0);
 }
 
 main {
@@ -8,9 +12,9 @@ main {
   flex-direction: column;
   align-items: center;
 
-  background:white;
-  background-image:linear-gradient(white 0%, darken(white,12%) 100%);
-  color:#444;
+  background-image: linear-gradient(white 0%, darken(white,12%) 100%);
+  background-color: var(--background-col-nav);
+  color: rgba(49, 0, 0, 0.75);
 }
 
 *, *:before, *:after {
@@ -53,15 +57,32 @@ a {
   width:360px;
   margin:3em auto;
   padding:2em;
-  border:1px solid black;
-  border-radius:var(--border-radius);
-  background:white;
-  
+  background-color: var(--background-col-nav-container);
+  box-shadow: var(--box-shadow-nav-container);
+  border: var(--border-col-nav-container);
+  border-radius: var(--border-radius);
 }
 
 .Zeitslots{
   display: flex;
   width: 250px;
+}
+
+#timeslot-wrapper {
+  padding: 2.4em 0;
+  background: var(--background-col-nav-container);
+  box-shadow: var(--box-shadow-nav-container);
+  border: var(--border-col-nav-container);
+  border-radius: var(--border-radius);
+}
+
+#person-wrapper {
+  width: 250px;
+  padding: 5.2em 0;
+  background: var(--background-col-nav-container);
+  box-shadow: var(--box-shadow-nav-container);
+  border: var(--border-col-nav-container);
+  border-radius: var(--border-radius);
 }
 
 .person_number{
@@ -220,19 +241,6 @@ output:after {
 
 #return_to_main{
   font-size: medium;
-}
-
-#timeslot-wrapper {
-  padding: 2.4em 0;
-  border: 1px solid black;
-  border-radius: var(--border-radius);
-}
-
-#person-wrapper {
-  width: 250px;
-  padding: 5.2em 0;
-  border: 1px solid black;
-  border-radius: var(--border-radius);
 }
 
 #mail-form {
