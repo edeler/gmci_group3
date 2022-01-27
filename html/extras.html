@@ -41,8 +41,9 @@
             <input type="submit" name="Submit">
         </form>
         <div class="button-bar">
-            <button id="button-okay" onclick="window.location.href='main.html'">Okay</button>
-            <button id="button-cancel" onclick="window.location.href='main.html'">Cancel</button>
+            <div id="booking-notification"><h4 style="margin: 0;">Booking</h4></div>
+            <button id="button-okay" onclick="sessionStorage.setItem('extras', document.getElementById('input_extras').value); window.location.href='congrats.html';">Okay</button>
+            <button id="button-cancel" onclick="window.location.href='food_menu.html'">Back</button>
         </div>
     </main>
     <footer>
@@ -52,5 +53,11 @@
         <div title="page_number"></div>
     </footer>
 </body>
-
+<script>
+    window.onload = function() {
+        if (sessionStorage.getItem('timeBooked') == 'true') {
+            generateBookingNotification();
+        }
+    };
+</script>
 </html>
