@@ -67,6 +67,7 @@ a {
 .Zeitslots{
   display: flex;
   width: 250px;
+  color: rgba(49, 0, 0, 0.75)
 }
 
 #timeslot-wrapper {
@@ -156,7 +157,7 @@ thead td {
   border:none;
   outline:none;
   font-size:1em;
-  color:grey;
+  color: rgba(49, 0, 0, 0.75);
   cursor:pointer;
   font-family:"Roboto Condensed", sans-serif;
   text-transform:uppercase;
